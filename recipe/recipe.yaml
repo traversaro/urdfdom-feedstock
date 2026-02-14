@@ -13,7 +13,7 @@ source:
   sha256: 096478dc889fda2b375184304bd2511d4f33182ecd05732284c15978e2ef5d47
 
 build:
-  number: 3
+  number: 0
 
 requirements:
   build:
@@ -25,10 +25,11 @@ requirements:
   host:
     - console_bridge
     - tinyxml2
-    - urdfdom_headers
+    - urdfdom_headers >=2.10
   run:
-    - urdfdom_headers
+    - ${{ pin_compatible('urdfdom_headers', upper_bound='x') }}
   run_exports:
+    - ${{ pin_subpackage('urdfdom_headers', upper_bound='x') }}
     - ${{ pin_subpackage('urdfdom', upper_bound='x.x') }}
 
 tests:
