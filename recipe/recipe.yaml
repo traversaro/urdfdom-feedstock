@@ -29,7 +29,7 @@ requirements:
   run:
     - ${{ pin_compatible('urdfdom_headers', upper_bound='x') }}
   run_exports:
-    - ${{ pin_subpackage('urdfdom_headers', upper_bound='x') }}
+    - ${{ pin_compatible('urdfdom_headers', upper_bound='x') }}
     - ${{ pin_subpackage('urdfdom', upper_bound='x.x') }}
 
 tests:
